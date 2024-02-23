@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <p>Enter your Trxt and Url</p>
+        <input type="text" placeholder="Enter Text & URL" id="qrText">
+        <div id="imgBOx">
+            <img src=""  id="qrimage" alt="">
+        </div>
+        <button onclick="Qrgenerate()">Generate QR CODE</button>
+    </div>
+
+
+    <script>
+        // let imgBOx = document.getElementById("imgBOx");
+        let qrimage =document.getElementById("qrimage");
+        let qrText =document.getElementById("qrText");
+
+
+
+        function Qrgenerate(){
+          //  qrimage.src ="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={qrText.value}"; 
+           if(qrText.value.length > 0){
+            qrimage.src ="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrText.value; 
+           }
+           else{
+            alert("plese enter a number")
+           }
+        }
+    </script>
+</body>
+</html>
